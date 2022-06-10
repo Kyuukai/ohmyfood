@@ -252,13 +252,6 @@ body {
 
 /* Mise en page Mobile - Restaurants */
 
-.container {
-    &__dishes {
-        background-color: $light-gray;
-        border-radius: 40px 40px 0 0;
-    }
-}
-
 .title {
     &__image {
         width: 100%;
@@ -397,5 +390,69 @@ body {
         font-size: 16px;
         padding: 1.2rem 3rem;
         margin: 2rem;
+    }
+}
+
+/* Mise en page Desktop */
+
+@media only screen and (min-width: 1024px ) {
+    .container {
+        margin: 0 20%;
+    }
+}
+
+/*Loader*/
+
+.loader {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: #FFF;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+    animation: loader 3s forwards;
+}
+
+/*Animation loader*/
+
+@keyframes loader {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        z-index: -10;
+    }
+}
+
+.loader__circle {
+    border: 10px solid #F3F3F3;
+    border-top: 10px solid $primary;
+    border-bottom: 10px solid $secondary;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spin 4s linear forwards;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/*Animation du loader circle*/
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        opacity: 0;
     }
 }
